@@ -1,4 +1,4 @@
-import { Htag, Button, Ptag, Tag } from '../components';
+import { Htag, Button, Ptag, Tag, Rating } from '../UI';
 
 export default function Home(): JSX.Element {
   return (
@@ -38,6 +38,11 @@ export default function Home(): JSX.Element {
       <Tag size="l" color="red" href="https://google.com">
         Tag link
       </Tag>
+      <Tag size="s" color="green" href="https://google.com">
+        default
+      </Tag>
+
+      <Rating rating={3} isEditable />
     </div>
   );
 }

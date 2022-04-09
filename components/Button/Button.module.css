@@ -28,3 +28,20 @@
 	color: var(--white);
 	background-color: var(--primary);
 }
+
+.primary svg,
+.ghost:hover svg {
+	fill: var(--white);
+}
+
+.arrow {
+	display: inline-block;
+
+	margin-left: 10px;
+
+	transition: all 0.3s;
+}
+
+.down {
+	transform: rotate(90deg);
+}

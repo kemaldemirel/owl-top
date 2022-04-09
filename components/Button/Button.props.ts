@@ -3,4 +3,5 @@ export interface IButtonProps
   extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   children: ReactNode;
   variant: 'primary' | 'ghost';
+  arrow?: 'rigth' | 'down' | 'none';
 }

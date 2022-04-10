@@ -2,10 +2,12 @@
 	"root": true,
 	"parser": "@typescript-eslint/parser",
 	"plugins": [
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"prettier"
 	],
 	"rules": {
 		"semi": "off",
+		"prettier/prettier": "error",
 		"@typescript-eslint/semi": [
 			"warn"
 		],
@@ -20,7 +22,8 @@
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
-    "next/core-web-vitals"
+		"plugin:react-hooks/recommended",
+		"prettier",
+		"next/core-web-vitals"
 	]
 }

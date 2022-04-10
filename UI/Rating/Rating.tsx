@@ -2,7 +2,7 @@ import { IRatingProps } from './Rating.props';
 import styles from './Rating.module.css';
 import cn from 'classnames';
 import Star from './star.svg';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, KeyboardEvent } from 'react';
 
 export const Rating = ({
   rating,
@@ -10,7 +10,9 @@ export const Rating = ({
   isEditable = false,
   ...props
 }: IRatingProps): JSX.Element => {
-  const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
+  const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
+    new Array(5).fill(<></>)
+  );
 
   useEffect(() => {
     constructRating(rating);
@@ -19,11 +21,21 @@ export const Rating = ({
   const constructRating = (currentRating: number) => {
     const ratingCurrent = ratingArray.map((r, i) => {
       return (
-        <span key={i} onMouseEnter={() => handleHover(i + 1)} onMouseLeave={handleLive}>
+        <span
+          className={cn(styles.rating, {
+            [styles.filled]: i < currentRating,
+            [styles.editable]: isEditable,
+          })}
+          key={i}
+          onMouseEnter={() => handleChangeDisplay(i + 1)}
+          onMouseLeave={() => handleChangeDisplay(rating)}
+          onClick={() => onclickHandler(i + 1)}
+        >
           <Star
-            className={cn(styles.rating, {
-              [styles.filled]: i < currentRating,
-            })}
+            tabIndex={isEditable ? 0 : -1}
+            onKeyDown={(e: KeyboardEvent<SVGAElement>) =>
+              isEditable && handleSpace(i + 1, e)
+            }
           />
         </span>
       );
@@ -31,15 +43,19 @@ export const Rating = ({
     setRatingArray(ratingCurrent);
   };
 
-  const handleHover = (i: number) => {
-    if (!isEditable) {
-      return;
-    }
+  const handleChangeDisplay = (i: number) => {
+    if (!isEditable) return;
     constructRating(i);
   };
 
-  const handleLive = () => {
-    constructRating(rating);
+  const onclickHandler = (i: number) => {
+    if (!isEditable || !setRating) return;
+    setRating(i);
+  };
+
+  const handleSpace = (i: number, e: KeyboardEvent<SVGAElement>) => {
+    if (e.code !== 'Space' || !setRating) return;
+    setRating(i);
   };
 
   return (

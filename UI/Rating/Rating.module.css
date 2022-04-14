@@ -1,13 +1,15 @@
 .rating svg {
-  fill: var(--gray-light);
-  margin-right: 5px;
-  transition: all .3s;
+	fill: var(--gray-light);
+
+	margin-right: 5px;
+
+	transition: all 0.3s;
 }
 
 .filled svg {
-  fill: var(--primary);
+	fill: var(--primary);
 }
 
 .editable {
-  cursor: pointer;
+	cursor: pointer;
 }

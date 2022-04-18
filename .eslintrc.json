@@ -4,12 +4,12 @@
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "semi": "off",
-    "prettier/prettier": "error",
     "@typescript-eslint/semi": ["warn"],
     "@typescript-eslint/no-empty-interface": [
       "error",
       {
-        "allowSingleExtends": true
+        "allowSingleExtends": true,
+        "prettier/prettier": "error"
       }
     ]
   },
@@ -18,6 +18,6 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ]
 }

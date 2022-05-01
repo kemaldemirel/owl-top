@@ -1,3 +1,6 @@
+import { ReactComponentElement, ReactElement, ReactNode } from 'react';
+import { TopLevelCategory } from './page.interface';
+
 export interface PageItem {
   alias: string;
   title: string;
@@ -10,4 +13,11 @@ export interface MenuItem {
     secondCategory: string;
   };
   pages: PageItem[];
+}
+
+export interface FirstLevelCategory {
+  route: string;
+  name: string;
+  icon: JSX.Element;
+  id: TopLevelCategory;
 }

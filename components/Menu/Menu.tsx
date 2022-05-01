@@ -1,6 +1,8 @@
 import { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/app.context';
 import styles from './Menu.module.css';
+import { firstLevelCategory } from './constants';
+import { MenuItems } from './components/MenuItems';
 
 export const Menu = (): JSX.Element => {
   const { menu, firstCategory, setMenu } = useContext(AppContext);
@@ -8,9 +10,7 @@ export const Menu = (): JSX.Element => {
   return (
     <div>
       <ul>
-        {menu.map((m) => (
-          <li key={m._id.secondCategory}>{m._id.secondCategory}</li>
-        ))}
+        <MenuItems menu={firstLevelCategory} />
       </ul>
     </div>
   );

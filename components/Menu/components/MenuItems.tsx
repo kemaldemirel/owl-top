@@ -39,11 +39,11 @@ export const MenuItems = ({
       <div>
         {menu.map((m) => {
           return (
-            <div key={m._id.secondCategory}>
+            <div key={m._id.secondCategory} className={styles.secondBlock}>
               <div className={styles.secondlevel}>{m._id.secondCategory}</div>
               <div
                 className={cn(styles.secondLevelBlock, {
-                  [styles.secondLevelBlock]: m.isOpened,
+                  [styles.secondLevelBlockOpened]: m.isOpened,
                 })}
               >
                 {buildThridlevel(m.pages, menuItem.route)}
@@ -56,11 +56,23 @@ export const MenuItems = ({
   };
 
   const buildThridlevel = (pages: PageItem[], route: string) => {
-    return pages.map((p) => (
-      <a key={p._id} href={`${route}/${p.alias}`}>
-        {p.category}
-      </a>
-    ));
+    return (
+      <ul>
+        {pages.map((p) => (
+          <li>
+            <a
+              key={p._id}
+              href={`${route}/${p.alias}`}
+              className={cn(styles.thridlevel, {
+                [styles.thridlevelActive]: false,
+              })}
+            >
+              {p.category}
+            </a>
+          </li>
+        ))}
+      </ul>
+    );
   };
 
   return <>{buildFirstLevel()}</>;

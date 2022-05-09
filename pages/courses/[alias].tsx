@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
-import { WhithLayout } from '../../components/Layout/Layout';
+import { WhithLayout } from 'components/Layout/Layout';
 import axios from 'axios';
-import { MenuItem } from '../../types/menu.interfaces';
-import { TopPageModel } from '../../types/page.interface';
+import { MenuItem } from 'types/menu.interfaces';
+import { TopPageModel } from 'types/page.interface';
 import { ParsedUrlQuery } from 'querystring';
-import { ProductModel } from '../../types/product.interface';
+import { ProductModel } from 'types/product.interface';
 import { useRouter } from 'next/router';
 
 function Course({ menu, page, products }: CourseProps): JSX.Element {

@@ -1,10 +1,11 @@
-import { ILayoutProps } from './Layout.props';
-import { Header } from '../Header/Header';
-import { Sidebar } from '../Sidebar/Sidebar';
-import { Footer } from '../Footer/Footer';
+import { Footer } from 'components/Footer/Footer';
+import { Header } from 'components/Header/Header';
+import { ILayoutProps } from 'components/Layout/Layout.props';
+import { Sidebar } from 'components/Sidebar/Sidebar';
+import { AppContextProvider, IAppContext } from 'context/app.context';
 import { FunctionComponent } from 'react';
+
 import styles from './Layout.module.css';
-import { AppContextProvider, IAppContext } from '../../context/app.context';
 
 const Layout = ({ children }: ILayoutProps) => {
   return (

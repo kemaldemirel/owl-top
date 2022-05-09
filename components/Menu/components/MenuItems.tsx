@@ -1,4 +1,4 @@
-import { FirstLevelCategory } from '../../../types/menu.interfaces';
+import { FirstLevelCategory } from 'types/menu.interfaces';
 
 interface MenuItemsProps {
   menu: FirstLevelCategory[];
@@ -6,12 +6,12 @@ interface MenuItemsProps {
 
 export const MenuItems = ({ menu }: MenuItemsProps): JSX.Element => {
   return (
-    <>
+    <ul>
       {menu.map((m) => (
         <li key={m.id}>
           {m.name} {m.icon}
         </li>
       ))}
-    </>
+    </ul>
   );
 };

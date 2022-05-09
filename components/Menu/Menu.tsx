@@ -1,17 +1,16 @@
-import { useContext, useEffect } from 'react';
-import { AppContext } from '../../context/app.context';
+import { AppContext } from 'context/app.context';
+import { useContext } from 'react';
+
 import styles from './Menu.module.css';
-import { firstLevelCategory } from './constants';
 import { MenuItems } from './components/MenuItems';
+import { firstLevelCategory } from './constants';
 
 export const Menu = (): JSX.Element => {
   const { menu, firstCategory, setMenu } = useContext(AppContext);
 
   return (
     <div>
-      <ul>
-        <MenuItems menu={firstLevelCategory} />
-      </ul>
+      <MenuItems menu={firstLevelCategory} />
     </div>
   );
 };

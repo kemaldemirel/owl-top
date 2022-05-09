@@ -1,8 +1,9 @@
-import { BooksIcon, CoursesIcon, ProductsIcon, ServicesIcon } from './icons';
-import { TopLevelCategory } from '../../types/page.interface';
-import { FirstLevelCategory } from '../../types/menu.interfaces';
+import { FirstLevelCategory } from 'types/menu.interfaces';
+import { TopLevelCategory } from 'types/page.interface';
 
-export const firstLevelCategory: FirstLevelCategory[] = [
+import { BooksIcon, CoursesIcon, ProductsIcon, ServicesIcon } from './icons';
+
+export const firstLevelMenu: FirstLevelCategory[] = [
   {
     route: 'courses',
     name: 'Курсы',

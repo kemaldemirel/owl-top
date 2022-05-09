@@ -10,6 +10,7 @@ export const Menu = (): JSX.Element => {
   return (
     <div>
       <MenuItems
+        setMenu={setMenu}
         menu={menu}
         firstLevelMenu={firstLevelMenu}
         firstCategory={firstCategory}

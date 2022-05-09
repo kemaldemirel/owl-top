@@ -1,9 +1,10 @@
+import axios from 'axios';
+import { WhithLayout } from 'components/Layout/Layout';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
-import { WhithLayout } from 'components/Layout/Layout';
-import { Htag, Button, Ptag, Tag, Rating } from '../UI';
-import axios from 'axios';
 import { MenuItem } from 'types/menu.interfaces';
+
+import { Button, Htag, Ptag, Rating, Tag } from '../UI';
 
 function Home({ menu }: HomeProps): JSX.Element {
   const [rating, setRating] = useState<number>(3);

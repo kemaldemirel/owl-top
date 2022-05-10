@@ -1,10 +1,10 @@
 /* Only comments */
 .sidebar {
-  display: grid;
-  align-content: start;
-  gap: 20px;
+	display: grid;
+	align-content: start;
+	gap: 20px;
 }
 
 .logo {
-  margin-top: 34px;
+	margin-top: 34px;
 }

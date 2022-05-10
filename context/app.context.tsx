@@ -34,8 +34,6 @@ export const AppContextProvider = ({
     setMenuState(newMenu);
   };
 
-  console.log('menuState', menuState);
-
   return (
     <AppContext.Provider value={{ menu: menuState, firstCategory, setMenu }}>
       {children}

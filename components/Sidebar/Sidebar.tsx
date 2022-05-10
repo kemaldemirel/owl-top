@@ -1,9 +1,15 @@
-import { ISidebar } from './Sidebar.props';
-import { Menu } from '../Menu/Menu';
+import cn from 'classnames';
 
-export const Sidebar = ({ ...props }: ISidebar) => {
+import { Menu } from '../Menu/Menu';
+import styles from './Sidebar.module.css';
+import { ISidebar } from './Sidebar.props';
+import Logo from './icons/logo.svg';
+
+export const Sidebar = ({ className, ...props }: ISidebar) => {
   return (
-    <div {...props}>
+    <div className={cn(className, styles.sidebar)} {...props}>
+      <Logo className={styles.logo} />
+      <div>поиск</div>
       <Menu />
     </div>
   );

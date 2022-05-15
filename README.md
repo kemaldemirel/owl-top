@@ -13,3 +13,7 @@
 - Style lint
 - ESLint
 - Husky
+
+### Step to work
+
+> git clone <...> npm install npm run dev

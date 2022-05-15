@@ -2,6 +2,8 @@
 
 ![alt text](public/photoshop-otzovik.png)
 
+Service for finding the best computer courses! :boom: :boom:
+
 ### [Demo](https://google.com)
 
 **Stack:**

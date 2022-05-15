@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { WhithLayout } from 'components/Layout/Layout';
 import { GetStaticProps } from 'next';
-import { useState } from 'react';
 import { MenuItem } from 'types/menu.interfaces';
 
 function Search(): JSX.Element {

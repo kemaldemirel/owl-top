@@ -3,22 +3,29 @@ import { WhithLayout } from 'components/Layout/Layout';
 import { firstLevelMenu } from 'components/Menu/constants';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
+import { TopPageComponent } from 'page-components';
 import { ParsedUrlQuery } from 'querystring';
 import { MenuItem } from 'types/menu.interfaces';
 import { TopLevelCategory, TopPageModel } from 'types/page.interface';
 import { ProductModel } from 'types/product.interface';
 
-function Course({ menu, page, products }: CourseProps): JSX.Element {
+function TopPage({ page, products, firstCategory }: TopPageProps): JSX.Element {
   const router = useRouter();
 
   if (router.isFallback) {
     return <span>Loading</span>;
   }
 
-  return <div>{products.length}</div>;
+  return (
+    <TopPageComponent
+      page={page}
+      products={products}
+      firstCategory={firstCategory}
+    />
+  );
 }
 
-export default WhithLayout(Course);
+export default WhithLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = [];
@@ -40,7 +47,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({
   params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) {
@@ -98,7 +105,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
   }
 };
 
-interface CourseProps extends Record<string, unknown> {
+interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[];
   firstCategory: TopLevelCategory;
   page: TopPageModel;

@@ -1,16 +1,17 @@
 .wrapper {
-  padding-top: 40px;
+	padding-top: 40px;
 }
 
 .title,
 .hhTitle {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: baseline;
-  justify-items: left;
-  gap: 20px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+
+	align-items: baseline;
+	justify-items: left;
+	gap: 20px;
 }
 
 .hhTitle {
-  grid-template-columns: auto 1fr;
+	grid-template-columns: auto 1fr;
 }
